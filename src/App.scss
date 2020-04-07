@@ -1,0 +1,45 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+html,
+body,
+#root,
+.page-content,
+#main {
+  background-color: var(--background);
+  height: 100%;
+  font-family: "Comfortaa", sans-serif;
+}
+
+html,
+body {
+  overflow: hidden;
+  background-color: var(--background);
+}
+input {
+  outline: none;
+}
+.show-filter {
+  padding-bottom: 0rem;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+}
+.page-content {
+  padding: 2rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  margin-left: -0.5rem;
+  height: calc(100vh - var(--header-height));
+  @include touch {
+    margin-top: 0.5rem;
+  }
+}
+@font-face {
+  font-family: "Comfortaa";
+
+  src: url("fonts/Comfortaa-VariableFont_wght.ttf");
+}

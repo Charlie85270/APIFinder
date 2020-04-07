@@ -1,0 +1,35 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+:root {
+  .dark {
+    --background: #090a0b;
+    --second--background: #161720;
+    --content: #232534;
+    --category-title: #585d6d;
+    --category-title-active: #4e79b0;
+    --secondary: #ffffff;
+  }
+  .light {
+    --background: #eff2fa;
+    --content: #ffffff;
+    --category-title: #464646;
+    --category-title-active: #4e79b0;
+    --secondary: #161720;
+    --secondar-2: #656565;
+  }
+  --black: #000000;
+
+  --header-height: 5.5rem;
+  --negative-header-height: -5.5rem;
+}
+.dark {
+  .page-content {
+    background: #181a27;
+  }
+}
+.light {
+  .page-content {
+    background: var(--background);
+  }
+}

@@ -1,0 +1,32 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+.Accordion {
+  width: 100%;
+  .Accordion-content {
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .Accordion-button {
+    cursor: pointer;
+
+    .Accordion-button--icon {
+      width: 1rem;
+      height: 1rem;
+      fill: var(--category-title);
+    }
+    .Accordion-button--label {
+      color: var(--secondary);
+      font-weight: bold;
+
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

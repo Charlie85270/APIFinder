@@ -1,0 +1,74 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+.Filters {
+  font-family: "Comfortaa", sans-serif;
+  padding: 1.5rem;
+  height: calc(100vh - var(--header-height));
+  overflow: auto;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: auto;
+
+  @include touch {
+    overflow-y: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .filter-security {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+    @include touch {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .filter-box {
+    text-align: center;
+    @include touch {
+      padding: 1rem;
+      padding-bottom: 0rem;
+    }
+    .logo {
+      width: 4rem;
+    }
+  }
+  .filter-categories-list {
+    li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+.light {
+  .Filters {
+    background-color: var(--content);
+  }
+}
+.dark {
+  .Filters {
+    background: rgb(24, 26, 38);
+    background: linear-gradient(
+      90deg,
+      rgba(24, 26, 38, 1) 50%,
+      rgba(24, 26, 39, 1) 100%
+    );
+    @include touch {
+      background: #191b27;
+      background: linear-gradient(
+        90deg,
+        #191b27 26%,
+        #181a26 65%,
+        #090a0b 100%
+      );
+    }
+    .category-number.selected {
+      color: var(--category-title-active);
+    }
+  }
+}

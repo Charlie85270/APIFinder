@@ -1,0 +1,106 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+.header {
+  .header-filter {
+    .close-filter-icon {
+      position: absolute;
+      right: 3rem;
+      z-index: 10;
+      cursor: pointer;
+      svg {
+        width: 1.5rem;
+        fill: var(--secondary);
+      }
+    }
+  }
+  .header-content {
+    height: var(--header-height);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-right: 3rem;
+    @include touch {
+      padding-right: 1rem;
+    }
+    .header--logo {
+      height: 3.5rem;
+      fill: var(--secondary);
+      @include touch {
+        height: 2.5rem;
+      }
+    }
+    .searchBar {
+      width: 70%;
+      @include touch {
+        width: 90%;
+      }
+      .filter-query {
+        width: 60%;
+        @include touch {
+          width: 90%;
+        }
+      }
+    }
+    .filter-icon {
+      width: 15%;
+      cursor: pointer;
+      svg {
+        width: 1rem;
+        height: 1rem;
+        fill: var(--secondary);
+      }
+    }
+    .header-title {
+      align-items: center;
+      width: 19%;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      text-align: center;
+
+      .header-label {
+        margin-left: 1rem;
+        font-weight: 600;
+        color: var(--secondary);
+      }
+    }
+
+    .header-link {
+      width: 15%;
+      color: var(--secondary);
+      display: flex;
+      cursor: pointer;
+      justify-content: flex-end;
+      align-items: center;
+      @include touch {
+        width: 10%;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        color: var(--content);
+      }
+      .header-link--icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 1rem;
+        fill: var(--secondary);
+      }
+    }
+  }
+}
+.dark {
+  .header {
+    background: #191b27;
+    background: linear-gradient(90deg, #191b27 26%, #181a26 65%, #090a0b 100%);
+  }
+}
+
+.light {
+  .header {
+    background-color: var(--content);
+  }
+}

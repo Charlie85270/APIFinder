@@ -1,0 +1,32 @@
+.Home {
+  .result {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    display: block;
+    .result-text {
+      border-bottom: 2px var(--category-title-active) solid;
+      padding-bottom: 1.25rem;
+    }
+  }
+  .my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -2rem; /* gutter size offset */
+    width: auto;
+    margin-top: 3rem;
+  }
+  .my-masonry-grid_column {
+    padding-left: 2rem; /* gutter size */
+    background-clip: padding-box;
+  }
+
+  @media screen and (max-width: 640px) {
+    .card-column {
+      width: 100%;
+    }
+  }
+}

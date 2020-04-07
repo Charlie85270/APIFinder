@@ -1,0 +1,16 @@
+{
+  "header": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "filters": {
+    "query": {
+      "placeholder": "Search a API"
+    },
+    "categories": "Categories ({{count}})",
+    "security": "Security ({{count}})"
+  },
+  "home": {
+    "results": "{{count}} Api(s) found"
+  }
+}

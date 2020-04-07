@@ -1,0 +1,74 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/bulma.sass";
+
+.chekbox-label.checkbox {
+  display: flex;
+  font-size: 0;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  @include touch {
+    padding: 1rem;
+  }
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.checkbox--input {
+  display: block;
+  appearance: none;
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-repeat: no-repeat;
+}
+.checkbox--input:checked {
+  border: none;
+}
+
+.checkbox--label {
+  padding-left: 0.5rem;
+  font-weight: 600;
+  font-family: "Comfortaa", sans-serif;
+  color: var(--category-title);
+  &:hover {
+    color: var(--secondary);
+  }
+}
+.checked {
+  .checkbox--label {
+    color: var(--secondary);
+  }
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: var(--category-title-active);
+    rect  {
+      fill: var(--category-title-active);
+    }
+  }
+}
+.light {
+  .checked {
+    .checkbox--label {
+      color: var(--category-title-active);
+    }
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--category-title-active) !important;
+      rect  {
+        fill: var(--category-title-active);
+      }
+    }
+  }
+  .chekbox-label.checkbox {
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--secondar-2);
+    }
+  }
+}
