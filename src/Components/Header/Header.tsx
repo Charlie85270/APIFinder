@@ -54,7 +54,10 @@ class Header extends Component<WithTranslation, State> {
       <div className="header">
         <div className="header-content">
           <span className="header-title">
-            <Logo className="header--logo is-hidden-desktop" />
+            <Logo
+              className="header--logo is-hidden-desktop"
+              title="Search over 680 public APIs"
+            />
             <span className="header-label is-size-4 is-hidden-touch">
               APIsFinder
             </span>

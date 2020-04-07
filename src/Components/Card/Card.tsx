@@ -37,6 +37,7 @@ class Card extends Component<Props & WithTranslation, State> {
     return (
       <div
         className="Card"
+        role="button"
         onClick={() => {
           ReactGA.event({
             category: "Click on Api card",
@@ -47,14 +48,15 @@ class Card extends Component<Props & WithTranslation, State> {
       >
         <div className="Card-header">
           <img
+            title={data.Category}
             src={Utils.getImageFromCategory(data.Category)}
             className="image-header"
-            alt="Category"
+            alt={`${data.Category} API`}
           ></img>
         </div>
         <div className="Card-information">
           <div className="Card-header-title">
-            <span className="is-size-4">
+            <span className="is-size-4" title={data.API}>
               {Utils.truncateString(data.API, 20)}
             </span>
           </div>
@@ -69,17 +71,14 @@ class Card extends Component<Props & WithTranslation, State> {
 
           <span className="Card-information-url-icon">
             <img
-              alt="Icone"
+              alt={`Icon API ${data.Category}`}
               onError={this.onError.bind(this)}
               src={this.state.imgUrl}
             />
           </span>
         </div>
-        <div className="Card-description is-size-6">
+        <div className="Card-description is-size-6" title={data.Description}>
           {Utils.truncateString(data.Description, 60)}
-        </div>
-        <div className="Card-footer">
-          <span className="Card-footer-link"></span>
         </div>
       </div>
     );
