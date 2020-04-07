@@ -109,8 +109,8 @@ class Home extends Component<WithTranslation, State> {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {this.state.apis.map(api => {
-            return <Card data={api}></Card>;
+          {this.state.apis.map((api, key) => {
+            return <Card key={key} data={api}></Card>;
           })}
         </Masonry>
         <Footer></Footer>
