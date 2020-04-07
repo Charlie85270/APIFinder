@@ -34,7 +34,6 @@ export default class Utils {
   };
 
   static getImageFromCategory = (category: string) => {
-    console.log();
     return `/category/${category.replace(/ /g, "").toLocaleLowerCase()}.jpg`;
   };
 

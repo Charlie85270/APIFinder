@@ -37,22 +37,25 @@ class SearchBar extends Component<Props & WithTranslation> {
           type="text"
           value={this.context.filters.query}
           className="input-query"
+          id="query"
           onChange={this.handleQueryChange}
           placeholder={t("filters.query.placeholder")}
         ></input>
-        {this.context.filters.query === "" ? (
-          <SearchIcon className="input-icon" />
-        ) : (
-          <CloseIcon
-            className="input-icon close-icon"
-            onClick={() => {
-              this.context.setFiltersValue({
-                ...this.context.filters,
-                query: ""
-              });
-            }}
-          />
-        )}
+        <label htmlFor="query">
+          {this.context.filters.query === "" ? (
+            <SearchIcon className="input-icon" />
+          ) : (
+            <CloseIcon
+              className="input-icon close-icon"
+              onClick={() => {
+                this.context.setFiltersValue({
+                  ...this.context.filters,
+                  query: ""
+                });
+              }}
+            />
+          )}
+        </label>
       </div>
     );
   }

@@ -5,7 +5,7 @@
   },
   "filters": {
     "query": {
-      "placeholder": "Search a API"
+      "placeholder": "Search an API"
     },
     "categories": "Categories ({{count}})",
     "security": "Security ({{count}})"

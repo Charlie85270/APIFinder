@@ -22,7 +22,7 @@ class Home extends Component<WithTranslation, State> {
   constructor(props: WithTranslation) {
     super(props);
     this.state = {
-      itemPerPage: 24,
+      itemPerPage: 12,
       currentItem: 0,
       apis: [],
       totalCount: 0
@@ -72,7 +72,6 @@ class Home extends Component<WithTranslation, State> {
   }
 
   getNextApis = () => {
-    console.log(this.context.APIs.entries);
     const { itemPerPage, currentItem } = this.state;
     const apis = Utils.getFilteredApis(
       this.context.APIs.entries,
