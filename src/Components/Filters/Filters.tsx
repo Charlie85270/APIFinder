@@ -14,9 +14,6 @@ import { ReactSVG } from "react-svg";
 class Filters extends Component<WithTranslation> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
-  constructor(props: WithTranslation) {
-    super(props);
-  }
 
   handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

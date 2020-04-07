@@ -1,5 +1,5 @@
 import { createBrowserHistory } from "history";
-import React, { Component, lazy, Suspense, RefObject } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import { Route, Router } from "react-router-dom";
 import { setCurrentLanguage } from "./i18n";
 import myData from "./data/api.json";

@@ -1,5 +1,4 @@
-import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
+import React, { Component } from "react";
 import "./LoadingPage.scss";
 import Spinner from "../../Components/Spinner/Spinner";
 

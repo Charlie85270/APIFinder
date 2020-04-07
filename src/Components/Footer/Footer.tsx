@@ -1,11 +1,8 @@
-import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
-
+import React, { Component } from "react";
 import "./Footer.scss";
 
-class Footer extends Component<WithTranslation> {
+class Footer extends Component {
   render() {
-    const { t } = this.props;
     return (
       <div className="Footer">
         <span className="owner is-size-7">By Charlie Rabiller </span>
@@ -18,4 +15,4 @@ class Footer extends Component<WithTranslation> {
   }
 }
 
-export default withTranslation()(Footer);
+export default Footer;

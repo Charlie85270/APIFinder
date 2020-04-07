@@ -33,13 +33,14 @@ class Card extends Component<Props & WithTranslation, State> {
   }
 
   render() {
-    const { t, data } = this.props;
+    const { data } = this.props;
     return (
       <div className="Card" onClick={() => window.open(data.Link, "_blank")}>
         <div className="Card-header">
           <img
             src={Utils.getImageFromCategory(data.Category)}
             className="image-header"
+            alt="Category"
           ></img>
         </div>
         <div className="Card-information">
@@ -58,7 +59,11 @@ class Card extends Component<Props & WithTranslation, State> {
           </span>
 
           <span className="Card-information-url-icon">
-            <img onError={this.onError.bind(this)} src={this.state.imgUrl} />
+            <img
+              alt="Icone"
+              onError={this.onError.bind(this)}
+              src={this.state.imgUrl}
+            />
           </span>
         </div>
         <div className="Card-description is-size-6">
