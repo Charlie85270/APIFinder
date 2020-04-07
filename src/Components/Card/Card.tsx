@@ -7,7 +7,7 @@ import { ReactComponent as AuthIcon } from ".././../Images/auth.svg";
 import { ReactComponent as HttpsIcon } from ".././../Images/https.svg";
 import { ReactComponent as CorsIcon } from ".././../Images/cors.svg";
 import Utils from "../../Utils/Utils";
-
+import ReactGA from "react-ga";
 interface Props {
   data: Api;
 }
@@ -35,7 +35,16 @@ class Card extends Component<Props & WithTranslation, State> {
   render() {
     const { data } = this.props;
     return (
-      <div className="Card" onClick={() => window.open(data.Link, "_blank")}>
+      <div
+        className="Card"
+        onClick={() => {
+          ReactGA.event({
+            category: "Click on Api card",
+            action: data.Link
+          });
+          window.open(data.Link, "_blank");
+        }}
+      >
         <div className="Card-header">
           <img
             src={Utils.getImageFromCategory(data.Category)}

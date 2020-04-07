@@ -10,7 +10,7 @@ import { ReactComponent as AuthIcon } from ".././../Images/auth.svg";
 import { ReactComponent as CorsIcon } from ".././../Images/cors.svg";
 import { ReactComponent as Logo } from ".././../Images/logo.svg";
 import { ReactSVG } from "react-svg";
-
+import ReactGA from "react-ga";
 class Filters extends Component<WithTranslation> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
@@ -21,6 +21,11 @@ class Filters extends Component<WithTranslation> {
       ...this.context.filters,
       query: value
     });
+    ReactGA.event({
+      category: "Search",
+      action: "Search a filter",
+      label: value
+    });
   };
 
   toggleCategory = (category: string) => {
@@ -30,7 +35,15 @@ class Filters extends Component<WithTranslation> {
         ...this.context.filters,
         categories: categories.filter(cat => cat !== category)
       });
+      ReactGA.event({
+        category: "Reset filter by category",
+        action: category
+      });
     } else {
+      ReactGA.event({
+        category: "Filter by category",
+        action: category
+      });
       categories.push(category);
       this.context.setFiltersValue({
         ...this.context.filters,
@@ -58,12 +71,18 @@ class Filters extends Component<WithTranslation> {
                     label="HTTPS"
                     checked={this.context.filters.https}
                     name="HTTPS"
-                    onChange={() =>
+                    onChange={() => {
+                      ReactGA.event({
+                        category: this.context.filters.https
+                          ? "Reset filter by category"
+                          : "Filter by category",
+                        action: "HTTPS"
+                      });
                       this.context.setFiltersValue({
                         ...this.context.filters,
                         https: !this.context.filters.https
-                      })
-                    }
+                      });
+                    }}
                   >
                     <HttpsIcon></HttpsIcon>
                   </Checkbox>
@@ -73,12 +92,18 @@ class Filters extends Component<WithTranslation> {
                     label="CORS"
                     checked={this.context.filters.cors}
                     name="CORS"
-                    onChange={() =>
+                    onChange={() => {
                       this.context.setFiltersValue({
                         ...this.context.filters,
                         cors: !this.context.filters.cors
-                      })
-                    }
+                      });
+                      ReactGA.event({
+                        category: this.context.filters.cors
+                          ? "Reset filter by category"
+                          : "Filter by category",
+                        action: "CORS"
+                      });
+                    }}
                   >
                     <CorsIcon></CorsIcon>
                   </Checkbox>
@@ -88,12 +113,18 @@ class Filters extends Component<WithTranslation> {
                     label="AUTH"
                     checked={this.context.filters.auth}
                     name="AUTH"
-                    onChange={() =>
+                    onChange={() => {
                       this.context.setFiltersValue({
                         ...this.context.filters,
                         auth: !this.context.filters.auth
-                      })
-                    }
+                      });
+                      ReactGA.event({
+                        category: this.context.filters.auth
+                          ? "Reset filter by category"
+                          : "Filter by category",
+                        action: "AUTH"
+                      });
+                    }}
                   >
                     <AuthIcon></AuthIcon>
                   </Checkbox>

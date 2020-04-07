@@ -13,6 +13,11 @@ import "./App.scss";
 import Utils from "./Utils/Utils";
 import LoadingPage from "./Pages/Loading/LoadingPage";
 import { Datas } from "./Models/Datas/Datas";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-163030135-1");
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 // Use lazy loading module for more performance (https://fr.reactjs.org/docs/code-splitting.html)
 const Home = lazy(() => import("./Pages/Home"));
 
@@ -60,9 +65,18 @@ class App extends Component<{}, AppState> {
           ...response,
           entries: Utils.sortApiByName(response.entries)
         };
+
         this.setState({ APIs: dataState });
+        ReactGA.event({
+          category: "Data",
+          action: "Success fetch APIs data"
+        });
       })
       .catch(error => {
+        ReactGA.event({
+          category: "Data",
+          action: "Error to fetch APIs data"
+        });
         const dataState = {
           ...myData,
           entries: Utils.sortApiByName(myData.entries)
