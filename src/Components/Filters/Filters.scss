@@ -33,7 +33,10 @@
       padding-bottom: 0rem;
     }
     .logo {
-      width: 4rem;
+      width: 5rem;
+      .st0 {
+        fill: var(--secondary);
+      }
     }
   }
   .filter-categories-list {

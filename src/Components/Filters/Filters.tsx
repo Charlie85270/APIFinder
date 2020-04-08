@@ -7,7 +7,7 @@ import Checkbox from "../Form/Checkbox/Checkbox";
 import { ReactComponent as HttpsIcon } from ".././../Images/https.svg";
 import { ReactComponent as AuthIcon } from ".././../Images/auth.svg";
 import { ReactComponent as CorsIcon } from ".././../Images/cors.svg";
-import { ReactComponent as Logo } from ".././../Images/logo.svg";
+import { ReactComponent as Logo } from ".././../Images/logo2.svg";
 import { ReactSVG } from "react-svg";
 import ReactGA from "react-ga";
 import Spinner from "../Spinner/Spinner";

@@ -26,10 +26,15 @@
       padding-right: 1rem;
     }
     .header--logo {
-      height: 3.5rem;
-      fill: var(--secondary);
+      height: 4.5rem;
+
+      .st0 {
+        fill: var(--secondary);
+      }
+
       @include touch {
-        height: 2.5rem;
+        height: 3.5rem;
+        margin-left: 1.5rem;
       }
     }
     .searchBar {

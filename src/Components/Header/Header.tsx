@@ -1,7 +1,7 @@
 import React, { Component, ContextType } from "react";
 import AppContext from "../../AppContext";
 import "./Header.scss";
-import { ReactComponent as Logo } from ".././../Images/logo.svg";
+import { ReactComponent as Logo } from ".././../Images/logo2.svg";
 import { ReactComponent as IdeaIcon } from ".././../Images/idea.svg";
 import { ReactComponent as FilterIcon } from ".././../Images/filter.svg";
 import { ReactComponent as CloseIcon } from ".././../Images/close.svg";
