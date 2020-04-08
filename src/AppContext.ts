@@ -12,8 +12,5 @@ export default React.createContext<AppState>({
     cors: false,
     auth: false
   },
-  setFiltersValue: (value: SearchFilters) => {},
-  i18n: {
-    changeLanguage: (lang: string) => {}
-  }
+  setFiltersValue: (value: SearchFilters) => {}
 });

@@ -1,12 +1,11 @@
 import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
 import AppContext from "../../AppContext";
 import "./Accordion.scss";
 
 interface Props {
   title: string;
 }
-class Accordion extends Component<Props & WithTranslation> {
+class Accordion extends Component<Props> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
 
@@ -23,4 +22,4 @@ class Accordion extends Component<Props & WithTranslation> {
   }
 }
 
-export default withTranslation()(Accordion);
+export default Accordion;

@@ -1,7 +1,6 @@
 import { createBrowserHistory } from "history";
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import { Route, Router } from "react-router-dom";
-import { setCurrentLanguage } from "./i18n";
 import myData from "./data/api.json";
 import "./styles/variables.scss";
 import AppContext from "./AppContext";
@@ -11,7 +10,6 @@ import Header from "./Components/Header/Header";
 import Filters from "./Components/Filters/Filters";
 import "./App.scss";
 import Utils from "./Utils/Utils";
-import LoadingPage from "./Pages/Loading/LoadingPage";
 import { Datas } from "./Models/Datas/Datas";
 import ReactGA from "react-ga";
 import Home from "./Pages/Home";
@@ -36,10 +34,7 @@ class App extends Component<{}, AppState> {
         auth: false
       },
 
-      setFiltersValue: this.setFiltersValue,
-      i18n: {
-        changeLanguage: this.changeLanguage
-      }
+      setFiltersValue: this.setFiltersValue
     };
   }
 
@@ -103,38 +98,28 @@ class App extends Component<{}, AppState> {
     this.scrollToTop();
   };
 
-  changeLanguage = (lang: string) => {
-    setCurrentLanguage(lang.toLocaleLowerCase());
-  };
-
   render() {
-    if (this.state.isLoading) {
-      return <LoadingPage></LoadingPage>;
-    }
-
     return (
       <AppContext.Provider value={this.state}>
         <Router history={this.history}>
-          <Suspense fallback={<LoadingPage></LoadingPage>}>
-            <main
-              id="main"
-              className={`wrapper ${this.getTheme()}`}
-              tabIndex={-1}
-            >
-              <Header />
-              <div className="columns is-desktop">
-                <div className="column desktop-filter is-one-fifth is-hidden-touch">
-                  <Filters />
-                </div>
+          <main
+            id="main"
+            className={`wrapper ${this.getTheme()}`}
+            tabIndex={-1}
+          >
+            <Header />
+            <div className="columns is-desktop">
+              <div className="column desktop-filter is-one-fifth is-hidden-touch">
+                <Filters />
+              </div>
 
-                <div className="column">
-                  <div className="page-content" id="content-page">
-                    <Route path={HOME} component={Home} />
-                  </div>
+              <div className="column">
+                <div className="page-content" id="content-page">
+                  <Route path={HOME} component={Home} />
                 </div>
               </div>
-            </main>
-          </Suspense>
+            </div>
+          </main>
         </Router>
       </AppContext.Provider>
     );

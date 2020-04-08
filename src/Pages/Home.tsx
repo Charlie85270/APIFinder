@@ -1,5 +1,4 @@
 import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
 import "./Home.scss";
 import AppContext from "../AppContext";
 import Card from "../Components/Card/Card";
@@ -8,6 +7,7 @@ import Utils from "../Utils/Utils";
 import { AppState } from "../AppState";
 import Masonry from "react-masonry-css";
 import Footer from "../Components/Footer/Footer";
+import LoadingPage from "./Loading/LoadingPage";
 
 interface State {
   currentItem: number;
@@ -16,10 +16,10 @@ interface State {
   totalCount: number;
 }
 
-class Home extends Component<WithTranslation, State> {
+class Home extends Component<{}, State> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
-  constructor(props: WithTranslation) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       itemPerPage: 12,
@@ -53,7 +53,7 @@ class Home extends Component<WithTranslation, State> {
     }
   }
 
-  componentWillReceiveProps(nextProps: WithTranslation, nextContext: AppState) {
+  componentWillReceiveProps(nextProps: any, nextContext: AppState) {
     if (Utils.filtersHaveChanged(nextContext.filters, this.context.filters)) {
       window.scrollTo(0, 0);
       this.setState({ currentItem: 0, apis: [] }, () => {
@@ -94,14 +94,16 @@ class Home extends Component<WithTranslation, State> {
       800: 2,
       600: 1
     };
-    const { t } = this.props;
+
     const { totalCount } = this.state;
+
+    if (this.context.isLoading) {
+      return <LoadingPage></LoadingPage>;
+    }
     return (
       <div className="Home">
         <span className="result is-size-4">
-          <span className="result-text">
-            {t("home.results", { count: totalCount })}
-          </span>
+          <span className="result-text">{totalCount} Api(s) find</span>
         </span>
 
         <Masonry
@@ -119,4 +121,4 @@ class Home extends Component<WithTranslation, State> {
   }
 }
 
-export default withTranslation()(Home);
+export default Home;

@@ -1,5 +1,4 @@
 import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
 import AppContext from "../../AppContext";
 import "./Header.scss";
 import { ReactComponent as Logo } from ".././../Images/logo.svg";
@@ -9,13 +8,14 @@ import { ReactComponent as CloseIcon } from ".././../Images/close.svg";
 import SearchBar from "../Form/SearchBar/SearchBar";
 import Filters from "../Filters/Filters";
 import ReactGA from "react-ga";
+
 interface State {
   showFilter: boolean;
 }
-class Header extends Component<WithTranslation, State> {
+class Header extends Component<{}, State> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
-  constructor(props: WithTranslation) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       showFilter: false
@@ -48,8 +48,8 @@ class Header extends Component<WithTranslation, State> {
   };
 
   render() {
-    const { t } = this.props;
     const { showFilter } = this.state;
+
     return (
       <div className="header">
         <div className="header-content">
@@ -79,7 +79,7 @@ class Header extends Component<WithTranslation, State> {
           </span>
           <span className="header-link" onClick={this.switchTheme}>
             <IdeaIcon className="header-link--icon is-hidden-desktop" />
-            {this.getTheme() === "light" ? t("header.dark") : t("header.light")}
+            {this.getTheme() === "light" ? "Dark mode" : "Light mode"}
           </span>
         </div>
         {showFilter && (
@@ -105,4 +105,4 @@ class Header extends Component<WithTranslation, State> {
   }
 }
 
-export default withTranslation()(Header);
+export default Header;

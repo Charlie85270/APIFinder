@@ -1,6 +1,4 @@
 import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
-
 import "./SearchBar.scss";
 
 import { ReactComponent as SearchIcon } from ".././../../Images/search.svg";
@@ -11,10 +9,10 @@ interface Props {
   theme?: "LIGHT";
 }
 
-class SearchBar extends Component<Props & WithTranslation> {
+class SearchBar extends Component<Props> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
-  constructor(props: WithTranslation) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       allCategories: []
@@ -30,18 +28,19 @@ class SearchBar extends Component<Props & WithTranslation> {
   };
 
   render() {
-    const { t, theme } = this.props;
+    const { theme } = this.props;
     return (
       <div className={`filter-query ${theme ? theme : ""}`}>
-        <input
-          type="text"
-          value={this.context.filters.query}
-          className="input-query"
-          id="query"
-          onChange={this.handleQueryChange}
-          placeholder={t("filters.query.placeholder")}
-        ></input>
         <label htmlFor="query">
+          <input
+            type="text"
+            value={this.context.filters.query}
+            className="input-query"
+            id="query"
+            onChange={this.handleQueryChange}
+            placeholder="Search an API"
+          ></input>
+          <span className="is-sr-only">Search an API</span>
           {this.context.filters.query === "" ? (
             <SearchIcon className="input-icon" />
           ) : (
@@ -61,4 +60,4 @@ class SearchBar extends Component<Props & WithTranslation> {
   }
 }
 
-export default withTranslation()(SearchBar);
+export default SearchBar;

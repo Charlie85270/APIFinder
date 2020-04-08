@@ -5,9 +5,6 @@ export interface AppState {
   APIs: Datas;
   filters: SearchFilters;
   setFiltersValue: (value: SearchFilters) => void;
-  i18n: {
-    changeLanguage: (lang: string) => void;
-  };
 }
 
 export interface SearchFilters {

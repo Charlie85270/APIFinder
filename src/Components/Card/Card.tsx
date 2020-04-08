@@ -1,5 +1,4 @@
 import React, { Component, ContextType } from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
 import AppContext from "../../AppContext";
 import "./Card.scss";
 import { Api } from "../../Models/Api/Api";
@@ -15,10 +14,10 @@ interface State {
   imgUrl: string;
 }
 
-class Card extends Component<Props & WithTranslation, State> {
+class Card extends Component<Props, State> {
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
-  constructor(props: Props & WithTranslation) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       imgUrl: `//logo.clearbit.com/${Utils.getDomainNameFromUrl(
@@ -26,7 +25,9 @@ class Card extends Component<Props & WithTranslation, State> {
       )}`
     };
   }
-  onError() {
+  onError(e: any) {
+    e.preventDefault();
+    e.stopPropagation();
     this.setState({
       imgUrl: "api.png"
     });
@@ -85,4 +86,4 @@ class Card extends Component<Props & WithTranslation, State> {
   }
 }
 
-export default withTranslation()(Card);
+export default Card;
