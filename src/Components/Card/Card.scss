@@ -67,6 +67,13 @@
     }
   }
 }
+.dark {
+  .Card-information {
+    .Card-information-category {
+      color: var(--secondary-2);
+    }
+  }
+}
 .light {
   .Card {
     box-shadow: 0 2px 5px 0 #e7eaec;
