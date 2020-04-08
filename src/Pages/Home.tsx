@@ -32,17 +32,14 @@ class Home extends Component<{}, State> {
   }
 
   handleScroll = (event: any) => {
-    clearTimeout(this.timeout);
-    this.timeout = window.setTimeout(() => {
-      const content = document.getElementById("content-page");
+    const content = document.getElementById("content-page");
 
-      if (
-        content &&
-        content.scrollTop + content.clientHeight + 100 >= content.scrollHeight
-      ) {
-        this.getNextApis();
-      }
-    }, 10);
+    if (
+      content &&
+      content.scrollTop + content.clientHeight + 200 >= content.scrollHeight
+    ) {
+      this.getNextApis();
+    }
   };
 
   componentDidMount() {
