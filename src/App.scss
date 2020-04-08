@@ -36,6 +36,7 @@ input {
   height: calc(100vh - var(--header-height));
   @include touch {
     margin-top: 0.5rem;
+    margin-right: 0rem;
   }
 }
 @font-face {
