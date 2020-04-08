@@ -35,13 +35,14 @@ class Home extends Component<{}, State> {
     clearTimeout(this.timeout);
     this.timeout = window.setTimeout(() => {
       const content = document.getElementById("content-page");
+
       if (
         content &&
-        content.scrollTop + content.clientHeight >= content.scrollHeight
+        content.scrollTop + content.clientHeight + 100 >= content.scrollHeight
       ) {
         this.getNextApis();
       }
-    }, 1000);
+    }, 10);
   };
 
   componentDidMount() {
