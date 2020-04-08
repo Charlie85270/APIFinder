@@ -34,7 +34,7 @@ export default class Utils {
   };
 
   static getImageFromCategory = (category: string) => {
-    return `/category/${category.replace(/ /g, "").toLocaleLowerCase()}.jpg`;
+    return `/category/${category.replace(/ /g, "").toLocaleLowerCase()}.webp`;
   };
 
   static getIconeFromCategory = (category: string) => {
