@@ -66,9 +66,9 @@ class Card extends Component<Props, State> {
             {data.Cors && <CorsIcon />}
             {data.Auth && <AuthIcon />}
           </span>
-          <span className="Card-information-category is-size-6">
+          <h2 className="Card-information-category is-size-7">
             {data.Category}
-          </span>
+          </h2>
 
           <span className="Card-information-url-icon">
             <img

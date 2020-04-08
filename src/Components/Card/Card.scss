@@ -22,6 +22,9 @@
       margin-bottom: 0.5rem;
       color: var(--background);
     }
+    .Card-header--icones {
+      float: left;
+    }
     .Card-header--icones,
     .Card-information-category-icon {
       svg {
