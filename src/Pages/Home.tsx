@@ -17,6 +17,8 @@ interface State {
 }
 
 class Home extends Component<{}, State> {
+  timeout: number = -1;
+
   static contextType = AppContext;
   context!: ContextType<typeof AppContext>;
   constructor(props: {}) {
@@ -30,13 +32,16 @@ class Home extends Component<{}, State> {
   }
 
   handleScroll = (event: any) => {
-    const content = document.getElementById("content-page");
-    if (
-      content &&
-      content.scrollTop + content.clientHeight >= content.scrollHeight
-    ) {
-      this.getNextApis();
-    }
+    clearTimeout(this.timeout);
+    this.timeout = window.setTimeout(() => {
+      const content = document.getElementById("content-page");
+      if (
+        content &&
+        content.scrollTop + content.clientHeight >= content.scrollHeight
+      ) {
+        this.getNextApis();
+      }
+    }, 1000);
   };
 
   componentDidMount() {
