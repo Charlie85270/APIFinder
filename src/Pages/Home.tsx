@@ -103,7 +103,7 @@ class Home extends Component<{}, State> {
     return (
       <div className="Home">
         <span className="result is-size-4">
-          <h1 className="result-text">{totalCount} Api(s) find</h1>
+          <h1 className="result-text">{totalCount} Api(s) found</h1>
         </span>
 
         <Masonry
