@@ -6,6 +6,7 @@ body,
 #root,
 .page-content,
 #main {
+  outline: none;
   background-color: var(--background);
   height: 100%;
   font-family: "Comfortaa", sans-serif;
