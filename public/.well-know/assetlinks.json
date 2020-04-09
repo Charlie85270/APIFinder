@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.charlie.apisfinder",
+    "sha256_cert_fingerprints":
+    ["26:E8:42:D7:88:4E:83:08:C9:B1:1E:F0:4A:27:C1:FA:BB:82:8C:6F:6E:F4:E3:A0:D5:82:2D:A6:56:A8:AF:EF"]
+  }
+}]
