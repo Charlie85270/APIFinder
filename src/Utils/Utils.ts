@@ -33,7 +33,11 @@ export default class Utils {
     return api.sort(compare);
   };
 
-  static getImageFromCategory = (category: string) => {
+  static getJpgFromCategory = (category: string) => {
+    return `/category/${category.replace(/ /g, "").toLocaleLowerCase()}.jpg`;
+  };
+
+  static getwebpFromCategory = (category: string) => {
     return `/category/${category.replace(/ /g, "").toLocaleLowerCase()}.webp`;
   };
 

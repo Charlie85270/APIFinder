@@ -48,12 +48,19 @@ class Card extends Component<Props, State> {
         }}
       >
         <div className="Card-header">
-          <img
-            title={data.Category}
-            src={Utils.getImageFromCategory(data.Category)}
-            className="image-header"
-            alt={`${data.Category} API`}
-          ></img>
+          <picture>
+            <source
+              srcSet={Utils.getwebpFromCategory(data.Category)}
+              type="image/webp"
+              title={data.Category}
+            />
+            <source srcSet={Utils.getJpgFromCategory(data.Category)} />
+            <img
+              src={Utils.getJpgFromCategory(data.Category)}
+              alt={`${data.Category} API`}
+              title={data.Category}
+            />
+          </picture>
         </div>
         <div className="Card-information">
           <div className="Card-header-title">
