@@ -1,5 +1,4 @@
-import React, { Component, ContextType } from "react";
-import AppContext from "../../AppContext";
+import React, { Component } from "react";
 import "./Header.scss";
 import { ReactComponent as Logo } from ".././../Images/logo2.svg";
 import { ReactComponent as IdeaIcon } from ".././../Images/idea.svg";
@@ -13,8 +12,6 @@ interface State {
   showFilter: boolean;
 }
 class Header extends Component<{}, State> {
-  static contextType = AppContext;
-  context!: ContextType<typeof AppContext>;
   constructor(props: {}) {
     super(props);
     this.state = {

@@ -1,14 +1,10 @@
-import React, { Component, ContextType } from "react";
-import AppContext from "../../AppContext";
+import React, { Component } from "react";
 import "./Accordion.scss";
 
 interface Props {
   title: string;
 }
 class Accordion extends Component<Props> {
-  static contextType = AppContext;
-  context!: ContextType<typeof AppContext>;
-
   render() {
     const { title } = this.props;
     return (

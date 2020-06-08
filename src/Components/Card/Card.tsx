@@ -1,5 +1,4 @@
-import React, { Component, ContextType } from "react";
-import AppContext from "../../AppContext";
+import React, { Component } from "react";
 import "./Card.scss";
 import { Api } from "../../Models/Api/Api";
 import { ReactComponent as AuthIcon } from ".././../Images/auth.svg";
@@ -15,8 +14,6 @@ interface State {
 }
 
 class Card extends Component<Props, State> {
-  static contextType = AppContext;
-  context!: ContextType<typeof AppContext>;
   constructor(props: Props) {
     super(props);
     this.state = {
