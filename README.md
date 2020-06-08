@@ -2,6 +2,8 @@
 
 [APIsFinder](https://www.apisfinder.com/ "APIsFinder") is a simple progressive webapp that allows you to search among more than 640 public and open APIs. It uses the [public-apis AP](https://github.com/public-apis/public-apis "public-apis repo").
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0234f33c-d745-4650-a1ed-d30ce264cf35/deploy-status)](https://app.netlify.com/sites/apisfinder/deploys)
+
 ![api](https://i.ibb.co/6Npc0p9/Capture-d-e-cran-2020-06-08-a-18-35-53.png "api")
 
 Made with React 16.8
